@@ -19,7 +19,7 @@ public class AppTest {
      */
     @Test
     public void testFizz() {
-        assertEquals("1,2,fizz,4,5,fizz,7", String.join(",", App.fizz(7)));
+        assertEquals("1,2,fizz,4,buzz,fizz,7", String.join(",", App.fizz(7)));
     }
 
 
