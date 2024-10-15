@@ -9,12 +9,17 @@ public class App {
         for (int i = 1; i <= number; i++) {
             boolean isDivisibleByThreeWithoutRest = i % 3 == 0;
             boolean isDivisibleByFiveWithoutRest = i % 5 == 0;
-            if (isDivisibleByThreeWithoutRest) {
+            boolean isDivisibleByBoth = i % 3 == 0 & i % 5 == 0;
+
+            if (isDivisibleByBoth) {
+                numbers.add("fizzbuzz");
+            }
+            else if (isDivisibleByThreeWithoutRest) {
                 numbers.add("fizz");
             } else if (isDivisibleByFiveWithoutRest) {
                 numbers.add("buzz");
-
-            } else {
+            }
+            else {
                 numbers.add(String.valueOf(i));
             }
         }
