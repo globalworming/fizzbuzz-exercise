@@ -29,8 +29,9 @@ public class AppTest {
      * and: for each number divisible by 5, return "buzz" instead
      * and if both is true, "fizzbuzz"
      */
-    //@Test
-    //public void shouldAnswerWithTrue() {
-    //            assertEquals("1,2,Fizz,4,buzz,fizz,7,8,fizz,buzz,11,fizz,13,14,fizzbuzz", App.fizz(15));
-    //}
+    @Test
+    public void alsoSupportsFizzBuzz() {
+        assertEquals("1,2,fizz,4,buzz,fizz,7,8,fizz,buzz,11,fizz,13,14,fizzbuzz", String.join(",", App.fizz(15)));
+    }
 }
+
