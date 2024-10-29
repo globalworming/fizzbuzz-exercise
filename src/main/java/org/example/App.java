@@ -12,7 +12,7 @@ public class App {
             boolean isDivisibleByBoth = i % 3 == 0 & i % 5 == 0;
 
             if (isDivisibleByBoth) {
-                numbers.add("fizzbuzz");
+                numbers.add("fizzbizz");
             } else if (isDivisibleByThreeWithoutRest) {
                 numbers.add("fizz");
             } else if (isDivisibleByFiveWithoutRest) {
