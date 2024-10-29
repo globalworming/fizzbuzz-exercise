@@ -13,16 +13,15 @@ public class App {
 
             if (isDivisibleByBoth) {
                 numbers.add("fizzbuzz");
-            }
-            else if (isDivisibleByThreeWithoutRest) {
+            } else if (isDivisibleByThreeWithoutRest) {
                 numbers.add("fizz");
             } else if (isDivisibleByFiveWithoutRest) {
                 numbers.add("buzz");
-            }
-            else {
+            } else {
                 numbers.add(String.valueOf(i));
             }
         }
         return numbers;
     }
 }
+
