@@ -23,5 +23,9 @@ public class App {
         }
         return numbers;
     }
+
+    public static List<String> initList(int i) {
+        return null;
+    }
 }
 
