@@ -60,12 +60,17 @@ public class AppTest {
     }
 
     @Test
-    @Disabled("TODO")
     void functionThatBuzzes() {
-    }
-    @Test
-    @Disabled("TODO")
-    void functionThatFizzBuzzes() {
+        List<String> input = List.of("1", "5");
+        Function<String, String> buzzFunction = it -> {
+            if (Integer.parseInt(it) % 5 == 0) { return "Buzz"; }
+            return it;
+        };
+
+        Stream<String> mapped = input.stream()
+                .map(buzzFunction);
+        String Buzzed = mapped.collect(Collectors.joining(","));
+        assertEquals("1,Buzz", Buzzed);
     }
 }
 
