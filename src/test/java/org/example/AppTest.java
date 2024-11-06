@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -43,7 +44,9 @@ public class AppTest {
     void functionThatFizzes() {
         List<String> input = List.of("1", "2", "3");
         Function<String, String> fizzFunction = it -> {
-            if (Integer.parseInt(it) % 3 == 0) { return "fizz"; }
+            if (Integer.parseInt(it) % 3 == 0) {
+                return "fizz";
+            }
             return it;
         };
 
@@ -63,7 +66,9 @@ public class AppTest {
     void functionThatBuzzes() {
         List<String> input = List.of("1", "5");
         Function<String, String> buzzFunction = it -> {
-            if (Integer.parseInt(it) % 5 == 0) { return "Buzz"; }
+            if (Integer.parseInt(it) % 5 == 0) {
+                return "Buzz";
+            }
             return it;
         };
 
@@ -72,5 +77,39 @@ public class AppTest {
         String Buzzed = mapped.collect(Collectors.joining(","));
         assertEquals("1,Buzz", Buzzed);
     }
+
+    @Test
+    void functionThatFizzBuzzes() {
+        List<String> input = List.of("15", "30");
+        Function<String, String> buzzFunction = it -> {
+            if ((Integer.parseInt(it) % 3 == 0) && (Integer.parseInt(it) % 5 == 0)) {
+                return "FizzBuzz";
+            }
+            return it;
+        };
+
+        Stream<String> mapped = input.stream()
+                .map(buzzFunction);
+        String FizzBuzzed = mapped.collect(Collectors.joining(","));
+        assertEquals("FizzBuzz,FizzBuzz", FizzBuzzed);
+    }
+
+    @Test
+    void functionThatPopulatesList() {
+        int input = 3;
+        Function<Integer, List<String>> PopulateFunction = it -> {
+            List<String> list = new ArrayList<>();
+
+            for (int i = 0; i < it; i++) {
+                list.add(i + 1 + "");
+            }
+            return list;
+
+
+        };
+
+        assertEquals(List.of("1", "2", "3"), PopulateFunction.apply(3));
+    }
 }
+
 
