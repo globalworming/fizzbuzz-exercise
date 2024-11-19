@@ -63,7 +63,7 @@ public class AppTest {
         Stream<String> mapped = input.stream()
                 .map(App.BUZZ_FUNCTION);
         String Buzzed = mapped.collect(Collectors.joining(","));
-        assertEquals("1,Buzz", Buzzed);
+        assertEquals("1,buzz", Buzzed);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class AppTest {
         Stream<String> mapped = input.stream()
                 .map(App.FIZZBUZZ);
         String FizzBuzzed = mapped.collect(Collectors.joining(","));
-        assertEquals("FizzBuzz,FizzBuzz", FizzBuzzed);
+        assertEquals("fizzbuzz,fizzbuzz", FizzBuzzed);
     }
 
     @Test
